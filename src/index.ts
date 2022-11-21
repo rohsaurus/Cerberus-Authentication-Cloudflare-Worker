@@ -52,7 +52,7 @@ const worker: ExportedHandler<Bindings> = {
         try {
             if (method === 'GET') {
                 // read the userid from the http request
-                const _id = await req.clone().json();
+                    const _id = await req.clone().json();
                     // GET /api/todos?id=XXX
                     // find the document that matches the given id
                     const doc = await collection.findOne({ _id});
@@ -69,7 +69,6 @@ const worker: ExportedHandler<Bindings> = {
                 const { _id, password } = await req.clone().json();
                 return utils.reply(
                     await collection.insertOne({
-                        // for some reason id is posting as null, so hardcoding something
                         "_id": _id,
                         "password": password
                     })
