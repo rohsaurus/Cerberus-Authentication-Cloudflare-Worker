@@ -6,7 +6,6 @@ interface Bindings {
     // MongoDB Realm Application ID
     REALM_APPID: string;
 }
-console.log("Hello, does this work?");
 // Define type alias; available via `realm-web`
 type Document = globalThis.Realm.Services.MongoDB.Document;
 
@@ -20,7 +19,6 @@ let App: Realm.App;
 const ObjectId = Realm.BSON.ObjectID;
 
 // Define the Worker logic
-console.log("Defining the worker");
 const worker: ExportedHandler<Bindings> = {
     async fetch(req, env) {
         const url = new URL(req.url);
@@ -62,10 +60,6 @@ const worker: ExportedHandler<Bindings> = {
 
             // POST /api/todos
             if (method === 'POST') {
-               // let {email} = (await req.clone().json())["_id"];
-                //console.log(email);
-                //let {password} = (await req.clone().json())["password"];
-                //console.log(password);
                 const { _id, password } = await req.clone().json();
                 return utils.reply(
                     await collection.insertOne({
