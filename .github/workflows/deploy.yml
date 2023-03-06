@@ -19,16 +19,16 @@ jobs:
           ACCOUNT_ID: ${{ secrets.ACCOUNT_ID }}
           REALM_APPID: ${{ secrets.REALM_APPID }}
         run: |
-          echo name="$NAME" > wrangler.toml
+          echo "name=$NAME" > wrangler.toml
           echo type="javascript" >> wrangler.toml
-          echo account_id="$ACCOUNT_ID" >> wrangler.toml
+          echo "account_id=$ACCOUNT_ID" >> wrangler.toml
           echo workers_dev = true >> wrangler.toml
           echo compatibility_date = "2022-05-23" >> wrangler.toml
           echo command = "npm run build" >> wrangler.toml
           echo dir = "build" >> wrangler.toml
           echo main = "./index.mjs" >> wrangler.toml
           echo format = "modules" >> wrangler.toml
-          echo REALM_APPID = "$REALM_APPID" >> wrangler.toml
+          echo "REALM_APPID=$REALM_APPID" >> wrangler.toml
         shell: bash
       - name: Publishing worker
         run: CLOUDFLARE_API_TOKEN=${{ secrets.CLOUDFLARE_API_KEY }} wrangler publish
