@@ -19,7 +19,7 @@ jobs:
           ACCOUNT_ID: ${{ secrets.ACCOUNT_ID }}
           REALM_APPID: ${{ secrets.REALM_APPID }}
         run: |
-          echo "name = $NAME" > wrangler.toml
+          echo name = $NAME > wrangler.toml
           echo type = "javascript" >> wrangler.toml
           echo "account_id = $ACCOUNT_ID" >> wrangler.toml
           echo workers_dev = true >> wrangler.toml
