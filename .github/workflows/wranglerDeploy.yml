@@ -9,10 +9,8 @@ jobs:
     
     
     steps:
-      - name: Checkout Repo
       - uses: actions/checkout@v2
-      - name: Setup Node.js environment
-        uses: actions/setup-node@v3.6.0
+      - uses: actions/setup-node@v3.6.0
       - name: Installing Cloudflare Workers Wrangler CLI
         run: $ npm i @cloudflare/wrangler -g
       - name: Creating Config File
