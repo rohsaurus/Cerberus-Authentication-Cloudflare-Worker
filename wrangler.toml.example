@@ -1,19 +1,14 @@
 name = "NAME OF YOUR WORKER"
-type = "javascript"
-
 account_id = "ENTER ACCOUNT ID"
 workers_dev = true # or zone_id = "<ZONE ID>" if you have one
 
 # Opt into backwards-incompatible chnages through 23 May 2022
 compatibility_date = "2022-05-23"
 
+main = "build/index.mjs"
+
 [build]
 command = "npm run build"
-
-[build.upload]
-dir = "build"
-main = "./index.mjs"
-format = "modules"
 
 [vars]
 REALM_APPID = "ENTER YOUR REALM_APPID"

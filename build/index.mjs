@@ -7603,10 +7603,8 @@ function reply(output) {
 }
 
 // src/index.ts
-console.log("Hello, does this work?");
 var App2;
 var ObjectId2 = bson_browser_esm_exports.ObjectID;
-console.log("Defining the worker");
 var worker = {
   async fetch(req, env) {
     const url = new URL(req.url);
