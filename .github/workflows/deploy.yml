@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v3.6.0
       - name: Installing Cloudflare Workers Wrangler CLI
-        run: npm i @cloudflare/wrangler -g
+        run: npm install -g wrangler
       - name: Creating Config File
         env: 
           NAME: ${{ secrets.NAME }}
