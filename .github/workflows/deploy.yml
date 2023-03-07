@@ -11,6 +11,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v3.6.0
+      - name: Installing Dependencies
+        run: npm install && npm install worktop --save
+        shell: bash
       - name: Creating Config File
         run: |
           echo workers_dev = true > wrangler.toml
