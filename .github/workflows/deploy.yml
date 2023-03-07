@@ -16,8 +16,8 @@ jobs:
         shell: bash
       - name: Creating Config File
         run: |
-          echo 'name = "${{ secrets.NAME }}"' >> wrangler.toml
-          echo workers_dev = true > wrangler.toml
+          echo 'name = "${{ secrets.NAME }}"' > wrangler.toml
+          echo workers_dev = true >> wrangler.toml
           echo 'compatibility_date = "2022-05-23"' >> wrangler.toml
           echo 'main = "build/index.mjs"' >> wrangler.toml
           echo "[build]" >> wrangler.toml
