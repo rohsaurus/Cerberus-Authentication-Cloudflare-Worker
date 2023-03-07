@@ -16,7 +16,7 @@ jobs:
           echo workers_dev = true > wrangler.toml
           echo compatibility_date = "2022-05-23" >> wrangler.toml
           echo "[build]" >> wrangler.toml
-          echo command = "npm run build" >> wrangler.toml
+          echo 'command = "npm run build"' >> wrangler.toml
         shell: bash
       - name: publish
         uses: cloudflare/wrangler-action@2.0.0
