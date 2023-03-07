@@ -20,8 +20,8 @@ jobs:
       - name: publish
         uses: cloudflare/wrangler-action@2.0.0
         with: 
-          apitoken: ${{ CLOUDFLARE_API_KEY }}
-          accountId: ${{ ACCOUNT_ID }}
+          apitoken: ${{ secrets.CLOUDFLARE_API_KEY }}
+          accountId: ${{ secrets.ACCOUNT_ID }}
         env:
           name: ${{ secrets.NAME }}
           REALM_APPID: $${{ secrets.REALM_APPID }}
