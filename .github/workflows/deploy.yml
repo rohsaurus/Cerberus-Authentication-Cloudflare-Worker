@@ -14,7 +14,7 @@ jobs:
       - name: Creating Config File
         run: |
           echo workers_dev = true > wrangler.toml
-          echo compatibility_date = "2022-05-23" >> wrangler.toml
+          echo 'compatibility_date = "2022-05-23"' >> wrangler.toml
           echo "[build]" >> wrangler.toml
           echo 'command = "npm run build"' >> wrangler.toml
         shell: bash
